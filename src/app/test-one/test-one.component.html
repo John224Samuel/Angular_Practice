@@ -1,1 +1,17 @@
-<p>{{title}}test-one works!</p>
+<h3>Example for services: fetching data from services</h3>
+<table border = "1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>City</th>
+        <th>Salary</th>
+        <th>Date of Birth</th>
+    </tr>
+    <tr *ngFor="let user of Users">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.city}}</td>
+        <td>{{user.salary}}</td>
+        <td>{{user.Dob}}</td>
+    </tr>
+</table>
