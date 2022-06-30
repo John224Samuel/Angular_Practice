@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -5,8 +6,12 @@ import { Injectable } from '@angular/core';
 })
 export class UsersService {
 
-  constructor() { }
+  constructor(private http:HttpClient) { }
 
+  getDetails(){
+    return this.http.get("http://localhost:3000/employees");
+  }
+  
   getUsers() {
     return [
       {id: '1007', name: 'John', city:'Delhi', salary: '5000' , Dob:new Date("02/24/1997")},

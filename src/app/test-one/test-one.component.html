@@ -14,4 +14,22 @@
         <td>{{user.salary | currency:'INR'}}</td>
         <td>{{user.Dob}}</td>
     </tr>
-</table>
+</table> <br><br>
+<h3>Http client get method from dummy Json server</h3>
+<div *ngIf="Details; else elseBlock">
+    <table border ="1">
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr *ngFor="let x of Details">
+            <td>{{x.name}}</td>
+            <td>{{x.age}}</td>
+            <td>{{x.city}}</td>
+        </tr>
+    </table>
+</div>
+<ng-template #elseBlock>
+    <h3>{{error}}</h3>
+</ng-template>

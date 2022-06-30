@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TestOneComponent } from './test-one/test-one.component';
 import { UsersService } from './users.service';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +13,8 @@ import { UsersService } from './users.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule  /*http client  */
   ],
   providers: [UsersService],
   bootstrap: [AppComponent]

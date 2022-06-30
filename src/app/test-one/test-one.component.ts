@@ -8,10 +8,16 @@ import { UsersService } from '../users.service';
 export class TestOneComponent implements OnInit {
 
   Users!:any[];
+  Details:any;
+  error!:string;
   constructor(private userservice: UsersService) {}
 
   ngOnInit(): void {
     this.Users = this.userservice.getUsers();
+    this.userservice.getDetails().subscribe(data => {
+      this.Details = data;
+    },
+    err=>this.error = "Data not Found");
   }
-title = "hell0";
+
 }
